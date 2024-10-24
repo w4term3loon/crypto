@@ -39,15 +39,16 @@ end
 -- input: number
 -- output: if the number is prime
 local function fermat(number)
-  print("iteration " .. arg[2] - depth + 1)
   if depth == 0 then
     return true
-  else depth = depth - 1
+  else
+    -- print("iteration " .. arg[2] - depth + 1)
+    depth = depth - 1
   end
 
   local witness = math.random(2, number - 2)
-  print("witness: " ..  witness)
-  print("------o------")
+  -- print("witness: " ..  witness)
+  -- print("------o------")
 
   if gcd(number, witness) ~= 1 then
     return false

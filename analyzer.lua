@@ -168,6 +168,10 @@ local function correlationNaive(output, inputLength)
     local abin = binaryRepresentation(a, inputLength)
     local ham = hamming(abin)
     local wal = walsh(abin, output)
+    if ham == 1 and wal ~= 0 then
+      print("VectorA-Walsh-Hamming")
+      print(abin .. " " .. wal .. "\t" .. ham)
+    end
     if 1 <= ham and ham <= tonumber(arg[2]) then
       if wal ~= 0 then
         ret = false
