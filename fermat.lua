@@ -42,13 +42,13 @@ local function fermat(number)
   if depth == 0 then
     return true
   else
-    -- print("iteration " .. arg[2] - depth + 1)
+    print("iteration " .. arg[2] - depth + 1)
     depth = depth - 1
   end
 
   local witness = math.random(2, number - 2)
-  -- print("witness: " ..  witness)
-  -- print("------o------")
+  print("witness: " ..  witness)
+  print("------o------")
 
   if gcd(number, witness) ~= 1 then
     return false
